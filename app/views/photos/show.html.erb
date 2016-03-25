@@ -1,0 +1,11 @@
+<h1>Display Model Records</h1>
+
+<img src="<%= @var.photo %>">
+<p>Caption <%= @var.caption %> </p>
+
+
+   <!-- <a href="/photos/<%= @var.id %>/edit">Edit</a> -->
+    <%= link_to "Edit", edit_photo_path(@var.id) %>
+    
+   <!-- <a href="/photos/<%= @var.id %>" data-confirm="Are you sure?" data-method="delete">Delete</a> -->
+    <%= link_to "Delete", photo_path(@var.id), {:method => :delete, :data => {:confirm => "Are you sure"}}%>

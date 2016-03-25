@@ -1,0 +1,39 @@
+<h1>New Record </h1>
+<% if @var.errors.present? %>
+    <p>The following error prevented your photo for being saved</p>
+    <ul>
+      <% @var.errors.full_messages.each do |message| %>
+       <li> <%= message %></li>
+       <% end %>
+   </ul>
+<% end %>
+
+
+<%= form_tag(photos_path) do %> 
+    
+    <label for="caption"> Caption
+        <input type="text"  id="caption"    name="caption"  value=<%=@var.caption%> >
+    </label>
+    <label for="photo"> URL
+        <input  type="text" id="photo"      name="photo"   value=<%=@var.photo%> >
+    </label>
+    <input type="submit">
+    
+<% end %>
+
+<!--
+
+<form method="post" action="/photos">
+    
+    <input name="authenticity_token" value="<%#=form_authenticity_token %>" type="hidden">
+    
+    <label for="caption">
+        Caption: <input type="text" id="caption" name="caption">
+    </label>
+    <label for="photo">
+        Photo URL: <input type="text" id="photo" name="photo">
+    </label>
+    
+    <input type="submit">
+    
+</form> -->

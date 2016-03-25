@@ -1,0 +1,12 @@
+<h1>Index Page</h1>
+
+
+<% @var.each do |pointer| %> 
+        
+    <%= link_to photo_path(pointer.id) do %>
+         <p> Caption: <%= pointer.caption %> </p>
+         <img src="<%= pointer.photo %>">
+       
+  <% end %>
+    
+<% end %>

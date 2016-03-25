@@ -1,0 +1,13 @@
+<h1>Edit Page</h1>
+
+<%= form_tag(photo_path(@var.id), :method => :patch) do %> 
+    
+    <label for="caption"> Caption
+        <input type="text"  id="caption"    name="caption"  value="<%= @var.caption %>">
+    </label>
+    <label for="photo"> URL
+        <input  type="text" id="photo"      name="photo"     value="<%= @var.photo %>">
+    </label>
+    <input type="submit">
+    
+<% end %>
